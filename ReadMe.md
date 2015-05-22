@@ -29,5 +29,5 @@ This will execute the Typescript compiler and use the default compile settings i
 
 #Definition of Examples
 
-example1 -- Simple Hello World App
-example2 -- Simple ToDo App
+    example1 -- Simple Hello World App
+    example2 -- Simple ToDo App
