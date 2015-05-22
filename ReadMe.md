@@ -25,7 +25,14 @@ compiler or you can recompile a file using the following command:
 
     tsc
     
-This will execute the Typescript compiler and use the default compile settings in the tsconfig.json file.
+This will execute the Typescript compiler and use the default compile settings in the tsconfig.json file to watch the 
+files and recompile them as they change.
+
+To test teh app you can run the http-server in teh example directory using the following command:
+
+   http-server
+   
+This will launch a web server on port 8080 that can be used to browse the example file using http://localhost:8080/index.html
 
 #Definition of Examples
 
