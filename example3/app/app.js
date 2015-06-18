@@ -1,4 +1,4 @@
-/// <reference path="../../typings/angular2/angular2.d.ts" />
+/// <reference path="../typings/tsd.d.ts" />
 if (typeof __decorate !== "function") __decorate = function (decorators, target, key, desc) {
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
     switch (arguments.length) {
@@ -8,23 +8,20 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
     }
 };
 var angular2_1 = require('angular2/angular2');
-var todoDirective = (function () {
-    function todoDirective() {
-        this.todos = ["Give away a book", "Give away another book", "Give away yet another book"];
+var registrationForm_1 = require('../components/registrationForm/registrationForm');
+var AppComponent = (function () {
+    function AppComponent() {
     }
-    todoDirective.prototype.addTodo = function (newTodo) {
-        this.todos.push(newTodo);
-    };
-    todoDirective = __decorate([
+    AppComponent = __decorate([
         angular2_1.Component({
-            selector: 'todos'
+            selector: 'my-registration-app'
         }),
         angular2_1.View({
-            templateUrl: 'components/todoDirective/todoDirective.html',
-            directives: [angular2_1.NgFor]
+            template: '<register></register>',
+            directives: [registrationForm_1.registrationForm]
         })
-    ], todoDirective);
-    return todoDirective;
+    ], AppComponent);
+    return AppComponent;
 })();
-exports.todoDirective = todoDirective;
-//# sourceMappingURL=todoDirective.js.map
+angular2_1.bootstrap(AppComponent);
+//# sourceMappingURL=app.js.map
