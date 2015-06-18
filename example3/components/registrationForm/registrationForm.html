@@ -1,74 +1,74 @@
 <div class="col-md-12">
-    <form class="form-horizontal" [control-group]="theForm">
+    <form class="form-horizontal" [ng-form-model]="theForm">
         <fieldset>
             <legend>Register</legend>
             <div class="form-group">
                 <label class="label label-default" for="UserName">User Name </label>
-                <input class="form-control" id="UserName" name="UserName" type="text" control="userName" required>
+                <input class="form-control" id="UserName" name="UserName" type="text" ng-control="userName" [(ng-model)]="customer.userName" required>
             </div>
-            <div *if="theForm.hasError('userName', 'required')">
+            <div [ng-if]="theForm.controls.userName.hasError('required')">
                 <p><i class="icon icon-warning-sign"></i>Please enter a user name</p>
             </div>
             <div class="form-group">
                 <label class="label label-default" for="FirstName">First Name </label>
-                <input class="form-control" id="FirstName" name="FirstName" type="text" control="firstName" required>
+                <input class="form-control" id="FirstName" name="FirstName" type="text" ng-control="firstName" [(ng-model)]="customer.firstName" required>
             </div>
-            <div *if="theForm.hasError('firstName', 'required')">
+            <div [ng-if]="theForm.controls.firstName.hasError('required')">
                 <p><i class="icon icon-warning-sign"></i>Please provide a first name</p>
             </div>
             <div class="form-group">
                 <label class="label label-default" for="LastName">Last Name </label>
-                <input class="form-control" id="LastName" name="LastName" type="text" control="lastName" required>
+                <input class="form-control" id="LastName" name="LastName" type="text" ng-control="lastName" [(ng-model)]="customer.lastName" required>
             </div>
-            <div *if="theForm.hasError('lastName', 'required')">
+            <div [ng-if]="theForm.controls.lastName.hasError('required')">
                 <p><i class="icon icon-warning-sign"></i>Please provide a last name</p>
             </div>
             <div class="form-group">
                 <label class="label label-default" for="Email">Email </label>
-                <input class="form-control" id="Email" name="Email" type="email" control="emailAddress" required>
+                <input class="form-control" id="Email" name="Email" type="email" ng-control="emailAddress" [(ng-model)]="customer.emailAddress" required>
             </div>
-            <div *if="theForm.hasError('emailAddress', 'required')">
+            <div [ng-if]="theForm.controls.emailAddress.hasError('required')">
                 <p><i class="icon icon-warning-sign"></i>Please provide a valid email address</p>
             </div>
             <div class="form-group">
                 <label class="label label-default" for="Phone">Phone </label>
-                <input class="form-control" id="Phone" name="Phone" type="text" control="phone" required>
+                <input class="form-control" id="Phone" name="Phone" type="text" ng-control="phone" [(ng-model)]="customer.phone" required>
             </div>
-            <div *if="theForm.hasError('phone', 'invalidPhone')">
+            <div [ng-if]="theForm.controls.phone.hasError('invalidPhone')">
                 <p><i class="icon icon-warning-sign"></i>Please provide a valid phone</p>
             </div>
-            <div control-group="address">
+            <div ng-control-group="address">
                 <h2>Mailing Address</h2>
                 <div class="form-group">
                     <label class="label label-default" for="Address1">Address </label>
-                    <input class="form-control" id="Address1" name="Address1" type="text" control="address1" required>
+                    <input class="form-control" id="Address1" name="Address1" type="text" ng-control="address1" [(ng-model)]="customer.address.address1" required>
                 </div>
-                <div *if="theForm.hasError('address.address1', 'required')">
+                <div [ng-if]="theForm.controls.address.controls.address1.hasError('required')">
                     <p><i class="icon icon-warning-sign"></i>Please enter a street address</p>
                 </div>
                 <div class="form-group">
                     <label class="label label-default" for="Address2">Apt/Suite </label>
-                    <input class="form-control" id="Address2" name="Address2" type="text" control="address2" >
+                    <input class="form-control" id="Address2" name="Address2" type="text" ng-control="address2" [(ng-model)]="customer.address.address2" >
                 </div>
                 <div class="form-group">
                     <label class="label label-default" for="City">City </label>
-                    <input class="form-control" id="City" name="City" type="text" control="city" required>
+                    <input class="form-control" id="City" name="City" type="text" ng-control="city" [(ng-model)]="customer.address.city" required>
                 </div>
-                <div *if="theForm.hasError('address.city', 'required')">
+                <div [ng-if]="theForm.controls.address.controls.city.hasError('required')">
                     <p><i class="icon icon-warning-sign"></i>Please enter a city</p>
                 </div>
                 <div class="form-group">
                     <label class="label label-default" for="State">State </label>
-                    <input class="form-control" id="State" name="State" type="text" control="state" required>
+                    <input class="form-control" id="State" name="State" type="text" ng-control="state" [(ng-model)]="customer.address.state" required>
                 </div>
-                <div *if="theForm.hasError('address.state', 'required')">
+                <div [ng-if]="theForm.controls.address.controls.state.hasError('required')">
                     <p><i class="icon icon-warning-sign"></i>Please enter a state</p>
                 </div>
                 <div class="form-group">
                     <label class="label label-default" for="PostalCode">Postal Code </label>
-                    <input class="form-control" id="PostalCode" name="PostalCode" type="text" control="postalCode" required>
+                    <input class="form-control" id="PostalCode" name="PostalCode" type="text" ng-control="postalCode" [(ng-model)]="customer.address.postalCode" required>
                 </div>
-                <div *if="theForm.hasError('address.postalCode', 'required')">
+                <div [ng-if]="theForm.controls.address.controls.postalCode.hasError('required')">
                     <p><i class="icon icon-warning-sign"></i>Please enter a postal code</p>
                 </div>
             </div>

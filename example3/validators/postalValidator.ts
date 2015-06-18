@@ -3,8 +3,10 @@
 import {Control} from 'angular2/angular2';
 
 export function validPostalCode(c: Control){
-    if(!c.value.match(/\d\d\d\d\d(-\d\d\d\d)?/)){
-        return {invalidPostalCode: true};
+    if(c.value){
+        if(!c.value.match(/\d\d\d\d\d(-\d\d\d\d)?/)){
+            return {invalidPostalCode: true};
+        }
     }
     return null;
 } 
