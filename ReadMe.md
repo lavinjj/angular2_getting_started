@@ -28,7 +28,7 @@ compiler or you can recompile a file using the following command:
 This will execute the Typescript compiler and use the default compile settings in the tsconfig.json file to watch the 
 files and recompile them as they change.
 
-To test teh app you can run the http-server in teh example directory using the following command:
+To test the app you can run the http-server in teh example directory using the following command:
 
     http-server
    

@@ -1,0 +1,81 @@
+<div class="col-md-12">
+    <form class="form-horizontal" [control-group]="theForm">
+        <fieldset>
+            <legend>Register</legend>
+            <div class="form-group">
+                <label class="label label-default" for="UserName">User Name </label>
+                <input class="form-control" id="UserName" name="UserName" type="text" control="userName" required>
+            </div>
+            <div *if="theForm.hasError('userName', 'required')">
+                <p><i class="icon icon-warning-sign"></i>Please enter a user name</p>
+            </div>
+            <div class="form-group">
+                <label class="label label-default" for="FirstName">First Name </label>
+                <input class="form-control" id="FirstName" name="FirstName" type="text" control="firstName" required>
+            </div>
+            <div *if="theForm.hasError('firstName', 'required')">
+                <p><i class="icon icon-warning-sign"></i>Please provide a first name</p>
+            </div>
+            <div class="form-group">
+                <label class="label label-default" for="LastName">Last Name </label>
+                <input class="form-control" id="LastName" name="LastName" type="text" control="lastName" required>
+            </div>
+            <div *if="theForm.hasError('lastName', 'required')">
+                <p><i class="icon icon-warning-sign"></i>Please provide a last name</p>
+            </div>
+            <div class="form-group">
+                <label class="label label-default" for="Email">Email </label>
+                <input class="form-control" id="Email" name="Email" type="email" control="emailAddress" required>
+            </div>
+            <div *if="theForm.hasError('emailAddress', 'required')">
+                <p><i class="icon icon-warning-sign"></i>Please provide a valid email address</p>
+            </div>
+            <div class="form-group">
+                <label class="label label-default" for="Phone">Phone </label>
+                <input class="form-control" id="Phone" name="Phone" type="text" control="phone" required>
+            </div>
+            <div *if="theForm.hasError('phone', 'invalidPhone')">
+                <p><i class="icon icon-warning-sign"></i>Please provide a valid phone</p>
+            </div>
+            <div control-group="address">
+                <h2>Mailing Address</h2>
+                <div class="form-group">
+                    <label class="label label-default" for="Address1">Address </label>
+                    <input class="form-control" id="Address1" name="Address1" type="text" control="address1" required>
+                </div>
+                <div *if="theForm.hasError('address.address1', 'required')">
+                    <p><i class="icon icon-warning-sign"></i>Please enter a street address</p>
+                </div>
+                <div class="form-group">
+                    <label class="label label-default" for="Address2">Apt/Suite </label>
+                    <input class="form-control" id="Address2" name="Address2" type="text" control="address2" >
+                </div>
+                <div class="form-group">
+                    <label class="label label-default" for="City">City </label>
+                    <input class="form-control" id="City" name="City" type="text" control="city" required>
+                </div>
+                <div *if="theForm.hasError('address.city', 'required')">
+                    <p><i class="icon icon-warning-sign"></i>Please enter a city</p>
+                </div>
+                <div class="form-group">
+                    <label class="label label-default" for="State">State </label>
+                    <input class="form-control" id="State" name="State" type="text" control="state" required>
+                </div>
+                <div *if="theForm.hasError('address.state', 'required')">
+                    <p><i class="icon icon-warning-sign"></i>Please enter a state</p>
+                </div>
+                <div class="form-group">
+                    <label class="label label-default" for="PostalCode">Postal Code </label>
+                    <input class="form-control" id="PostalCode" name="PostalCode" type="text" control="postalCode" required>
+                </div>
+                <div *if="theForm.hasError('address.postalCode', 'required')">
+                    <p><i class="icon icon-warning-sign"></i>Please enter a postal code</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <button name="registerBtn" title="Save" (click)="register()" class="btn btn-large btn-primary">Register</button>
+                <a href="#/" name="cancelBtn" class="btn btn-large btn-danger">Cancel</a>
+            </div>
+        </fieldset>
+    </form>
+</div>
